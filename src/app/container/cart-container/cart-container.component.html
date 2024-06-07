@@ -1,0 +1,12 @@
+<app-cart-block
+  [selectedBooks]="cart$ | async"
+  [errorResponse]="errorResponse$ | async"
+  [successResponse]="successResponse$ | async"
+  (removeToCopieEvent)="onRemoveFromCart($event)"
+  (clearCartEvent)="onClearCart()"
+  (checkoutCartEvent)="onCheckoutCart($event)"
+  (closeModalEvent)="onCloseModal($event)"
+>
+</app-cart-block>
+
+<app-spinner-element [showSpinner]="showSpinner$ | async" />

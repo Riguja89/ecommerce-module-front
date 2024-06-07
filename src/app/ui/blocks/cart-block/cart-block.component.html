@@ -1,0 +1,157 @@
+<section class="cart">
+  <h2 class="cart__title">Carrito de préstamos</h2>
+
+  <div class="cart-item_empty">
+    @if(selectedBooks.length === 0) {
+    <svg
+      class="icon_empty"
+      xmlns="http://www.w3.org/2000/svg"
+      width="100"
+      height="100"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart-plus"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path d="M12.5 17h-6.5v-14h-2" />
+      <path d="M6 5l14 1l-.86 6.017m-2.64 .983h-10.5" />
+      <path d="M16 19h6" />
+      <path d="M19 16v6" />
+    </svg>
+    <p class="text_empty">¡Tu carrito de prestamos está vacío!</p>
+    }
+  </div>
+
+  <ul class="cart-list">
+    @for(book of selectedBooks; track book.id) {
+    <app-cart-item
+      [book]="book"
+      (deleteItem)="deleteCopieFromCart($event)"
+    ></app-cart-item>
+    }
+  </ul>
+
+
+
+  <label for="returnDate">Fecha de devolución:</label>
+  <input
+    type="date"
+    id="returnDate"
+    name="returnDate"
+    (change)="updateReturnDate($event)"
+    max="{{ maxReturnDate }}"
+    min="{{ minReturnDate }}"
+  />
+
+  <div class="button_cart">
+    @if (selectedBooks.length <= 0) {
+    <button class="cart__confirmation disabled" disabled>
+      Realizar préstamo
+    </button>
+    }@else{
+    <button class="cart__confirmation" (click)="checkout(selectedBooks)">
+      Realizar préstamo
+    </button>
+    }
+    <button class="cart__clear" (click)="clearCart()">Vaciar carrito</button>
+  </div>
+
+
+
+  <!--- ==================================== -->
+  <div
+    class="modal"
+    id="resultModal"
+    [style.display]="
+      successResponse === true || errorResponse !== null ? 'block' : 'none'
+    "
+  >
+    
+
+    <div class="card" *ngIf="successResponse === true">
+      <button type="button" class="dismiss" (click)="closeModal()">X</button>
+      <div class="header">
+        <div class="image">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+            <g
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              id="SVGRepo_tracerCarrier"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="1.5"
+                stroke="#000000"
+                d="M20 7L9.00004 18L3.99994 13"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <div class="content">
+          <span class="title"> Préstamo Validado</span>
+          <p class="message">
+            REVISA TU CORREO ELECTRÓNICO<br />PARA CONOCER LOS<br />
+            DETALLES DE TU PRESTAMO
+          </p>
+        </div>
+        <div class="actions">
+          <button type="button" class="history" (click)="closeModal()">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" *ngIf="errorResponse !== null">
+      <button type="button" class="dismiss" (click)="closeModal()">x</button>
+      <div class="header">
+        <div class="image-error">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+            <g
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              id="SVGRepo_tracerCarrier"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="1.5"
+                stroke="#000000"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <div class="content">
+          <span class="title-error">Solicitud Rechazada</span>
+          <p class="message">Intenta nuevamente realizar el préstamo</p>
+        </div>
+        <div class="actions">
+          <button type="button" class="history" (click)="closeModal()">
+            cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>

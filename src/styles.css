@@ -1,13 +1,25 @@
-:root {
+/* :root {
   color-scheme:unset;
   background-color: rgb(56, 56, 56);
 }
 
+
+
+/* .main .foot .header {
+  max-width: 1110px;
+  margin: 0 auto;
+} */ 
 html {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.main .foot .header {
-  max-width: 1110px;
-  margin: 0 auto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+main {
+  min-height: calc(100vh - 64px - 188px);
 }

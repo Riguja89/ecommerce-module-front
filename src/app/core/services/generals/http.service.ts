@@ -22,7 +22,9 @@ export class HttpService {
     if(this.token!=null){
       return new HttpHeaders()
       .append('Content-Type', 'application/json')
-      .append('Authorization', `Bearer ${this.token}`);
+      //IMPORTE PARA EL TOKEN
+      // .append('Authorization', `Bearer ${this.token}`);
+      
     }else{
       return new HttpHeaders()
       .append('Content-Type', 'application/json');

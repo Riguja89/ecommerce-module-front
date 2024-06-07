@@ -1,0 +1,9 @@
+<section class="book-grid">
+  <div *ngFor="let copie of copies" class="copie-item">
+    <app-copie-element [copie]="copie"
+    (addToCartEvent)="onAddToCart($event)"
+   class="copie-element" >
+
+    </app-copie-element>
+  </div>
+</section>

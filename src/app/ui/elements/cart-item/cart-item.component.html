@@ -1,0 +1,10 @@
+<article class="cart-item">
+  <img src="/assets/book-antiqui.png" alt="" class="book-cover">
+  <div class="book-details">
+  <h3 class="book-title">{{ book.title }}</h3>
+  <p class="book-author">{{ book.author }}</p>
+  <p class="available-copies">Disponible: {{ book.stock }} copias</p>
+
+  <button  class="delete-button" (click)="removeFromCart(book.id)">Eliminar</button>
+</div>
+</article>

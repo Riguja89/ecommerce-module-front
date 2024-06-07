@@ -1,0 +1,364 @@
+h2 {
+  font-size: 24px;
+  /* margin-bottom: 20px; */
+}
+
+.cart {
+  border: 1px solid #ccc;
+  position:sticky;  
+  top: 20px;
+  right: 0;  
+  padding: 20px;
+  max-width: 400px;
+  min-width: 350px;
+  margin: 0 auto;
+}
+
+.cart__title {
+  font-size: 24px;  
+}
+
+
+/* =====cart list====== */
+.cart__list {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+  overflow-y: auto;
+  max-height: 50vh;  
+  /* Ajusta la altura máxima según tus necesidades */
+}
+
+
+.cart-list::-webkit-scrollbar{
+  width: 12px; /* Ancho de la barra */
+}
+.cart-list::-webkit-scrollbar-track {
+  background: #c1d5e1; /* Color de fondo de la pista */
+}
+
+.cart-list::-webkit-scrollbar-thumb {
+  background: #136696; /* Color del pulgar */
+  border-radius: 6px; /* Radio de borde del pulgar */
+}
+
+.cart-list::-webkit-scrollbar-thumb:hover {
+  background: #136696; /* Color del pulgar al pasar el ratón sobre él */
+}
+
+/* =====cart item====== */
+
+
+
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+
+ .cart-item_empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  
+}
+
+.icon_empty {
+  margin-bottom: 20px;
+
+}
+
+.text_empty {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-bottom: 40px;
+  font-family:"Poppins", sans-serif ;
+  
+} 
+
+#returnDate {
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.cart__confirmation {
+  margin-top: 10px;
+  height: 40px;
+  background-color: #136696;
+  border-radius: 18px;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.disabled{
+  background-color: #ccc;
+  cursor: not-allowed;
+
+}
+.cart__clear {
+  margin-top: 10px;
+  height: 40px;
+  background-color: #ff6347;
+  border-radius: 18px;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.button_cart {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cart__empty{
+  font-size: 24px;
+  text-align: center;
+}
+
+
+/* =============MODAL==============  */
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal-title {
+  margin: 0;
+}
+
+.close-button {
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.modal-body {
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  text-align: right;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: #ccc;
+  color: #fff;
+}
+
+
+
+/* =======================NEW MODWL ============= */
+
+.card {
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  border-radius: 0.5rem;
+  width: 600px;
+  height: 400px;
+  /* max-width: 290px; */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400PX;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);  
+
+}
+
+.dismiss {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: black;
+  border: 2px solid #D1D5DB;
+  font-size: 1rem;
+  font-weight: 300;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  transition: .3s ease;
+}
+
+.dismiss:hover {
+  background-color: #ff6347;
+  border: 2px solid #ff6347;
+  color: #fff;
+}
+
+.header {
+  padding: 1.25rem 1rem 1rem 1rem;
+  margin-top: 60px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #3795cb;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 9999px;
+  animation: animate .6s linear alternate-reverse infinite;
+  transition: .6s ease;
+}
+.image-error{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffb0a3;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 9999px;
+  animation: animate .6s linear alternate-reverse infinite;
+  transition: .6s ease;
+}
+
+.image svg {
+  color: #0afa2a;
+  width: 3rem;
+  height: 3rem;
+}
+
+.content {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.title {
+  color: #136696;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+.title-error {
+  color: #ff6347;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+.message {
+  margin-top: 0.5rem;
+  color: #595b5f;
+  font-family: "Poppins", sans-serif;
+  font-size:1.03rem;
+  line-height: 1.25rem;
+  
+ 
+}
+
+.actions {
+  margin: 0.75rem 1rem;
+  text-align: center;
+}
+
+.history {
+  display: inline-flex;
+  padding: 0.5rem 1rem;
+  background-color: #136696;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  justify-content: center;
+  width: 60%;
+  height: 40%;  
+  border-radius: 0.375rem;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer; 
+}
+
+.track {
+  display: inline-flex;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  color: #242525;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  justify-content: center;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid #D1D5DB;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.09);
+  }
+}

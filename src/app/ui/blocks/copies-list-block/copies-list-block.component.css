@@ -1,0 +1,16 @@
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+    margin-right: 16px;
+  }
+
+  .copie-item {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .copie-element {
+    width: 100%;
+  }
