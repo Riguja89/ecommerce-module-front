@@ -25,8 +25,7 @@ export class HeaderBlockComponent implements OnInit{
 
   @Output() logout = new EventEmitter<void>();
 
-  onLogout() {
-    
+  onLogout() {    
     this.logout.emit();
     console.log('Logout');
   }

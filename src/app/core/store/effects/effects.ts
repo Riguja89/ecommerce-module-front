@@ -51,7 +51,7 @@ export class CopiesEffects {
           }),
           catchError((error) => {
             this.store.dispatch(CopiesActions.hideSpinner());
-            //window.location.href = 'https://www.youtube.com/watch?v=xvFZjo5PgG0'; //Cambiar a Url de login
+            window.location.href = 'https://sherna0303.github.io/Authentication-Pinguinera-FronEnd/#/login'; //Cambiar a Url de login
             return of(AuthActions.loadAuthFailure({ error }));
           })
         );

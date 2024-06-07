@@ -1,27 +1,4 @@
 
-/* .header__underline-effect {
-    display: inline-block;
-    position: relative;
-    color: #fff;
-    text-decoration: none;
-    
-  }
-  
-  .header__underline-effect::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: #fff;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    transition: width 0.3s ease;
-  } */
-
-
-  /* ================= */
-
 
 
 
@@ -63,6 +40,7 @@
 
 .nav-item {
     padding: 0 15px;
+    pointer-events: none;
 }
 
 .nav-link {

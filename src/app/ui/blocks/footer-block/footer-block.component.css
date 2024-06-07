@@ -38,6 +38,7 @@
 
 .footer-nav-item {
   margin-right: 30px;
+  pointer-events: none;
 }
 
 .footer-nav-link {
