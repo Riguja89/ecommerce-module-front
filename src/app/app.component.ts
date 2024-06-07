@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [RouterOutlet, WaitContainerComponent,SpinnerElementComponent,CommonModule],
   templateUrl: './app.component.html',
-//  template: '<router-outlet/>',
+
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'ecommerce-front';
