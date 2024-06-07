@@ -20,7 +20,7 @@ export class HeaderContainerFacade {
   }
 
   remove(): void {
-    this.storageService.remove('token');
+    this.storageService.remove('token');0
     this.storageService.remove('userName');
     this.storageService.remove('userId');
     this.storageService.remove('refreshToken');
